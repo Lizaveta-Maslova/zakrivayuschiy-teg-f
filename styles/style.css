@@ -6,7 +6,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -17,4 +16,407 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--background-image);
+  background-attachment: fixed;
+  font-size: var(--accent-font-family);
+}
+
+.content-section {
+  /* width: 375px; */
+  margin: auto;
+  background-color: var(--background-color);
+}
+
+.header {
+  padding: 100px 0;
+  min-height: 527px; /*либо 531*/
+  background-color: transparent;
+}
+
+.header div {
+  padding: 120px 14px 25px 14px;
+  text-transform: uppercase;
+  font-family: var(--accent-font-family);
+  font-weight: var(--weight-main-font-size);
+  min-height: 328px; /*высота белого блока*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  justify-content: space-between;
+  background-color: var(--background-color);
+  color: var(--main-color);
+}
+
+.header h1 {
+  font-size: 49px;
+  line-height: 49px;
+}
+
+.header p {
+  font-size: 14px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+}
+
+.theme-menu__button {
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: var(--weight-main-font-size);
+  line-height: 14px;
+  color: var(--main-color);
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+  /* appearance: none; */
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  pointer-events: none;
+  animation: arrow 0.5s ease-in-out infinite alternate;
+  transition: transform 0.3s ease;
+}
+
+.theme-menu__button:enabled::after {
+  animation: arrow 0.5s ease-in-out infinite alternate;
+}
+
+.theme-menu__button:hover {
+  color: var(--color-opacity);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.theme-menu__button:focus::after {
+  width: 100%;
+  background-color: rgb(0 0 0/0.6);
+  transition: width 300ms, background-color 0.3s;
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: var(--weight-main-font-size);
+  line-height: 14px;
+  color: var(--main-color);
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.button-underline::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-top: 1px;
+  background-color: rgb(0 0 0/0.6);
+  transition: none;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* активный класс меню, сделать стрелочку с постоянной анимацией */
+.theme-menu__button-active {
+  color: var(-color-opacity);
+  display: list-item;
+}
+
+.card-content {
+  border: 2px solid var(--border-color);
+}
+
+.card-content h2 {
+  color: var(--main-color);
+  font-family: var(--main-font-family);
+  font-size: 18px;
+  font-weight: var(--weight-heading);
+  line-height: 21.78px;
+  text-align: left;
+  /* min-height: 31px; */
+}
+
+.card-content img {
+  width: 100%;
+}
+
+.card-content:nth-child(1) {
+  min-height: 758px;
+}
+
+.card-content:nth-child(1) h2 {
+  padding: 4px 10px 6px 10px;
+}
+
+.card-content {
+  font-family: var(--main-font-family);
+  font-size: 18px;
+  font-weight: var(--weight-main-font-size);
+  line-height: 21px;
+  margin-bottom: 50px;
+  color: var(--main-color);
+}
+
+.card__like-button {
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: var(--weight-main-font-size);
+  line-height: 12.6px;
+  border: none;
+  align-self: end;
+  border: 2px solid var(--border-color);
+  padding: 10.5px 35px;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+/* начало - кнопка сердца и like */
+.wrapper {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
+
+.like-icon {
+  width: 27px;
+  height: 24px;
+  align-self: center;
+}
+
+.button-like:focus {
+  border: none;
+}
+
+.button-like:focus-visible {
+  border: 2px solid var(--border-color);
+  transition: border 0.3s ease;
+}
+
+.card__like-button:hover {
+  color: var(--color-like);
+}
+
+.card__like-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: var(--color-like);
+  background-color: var(--fill-like);
+  transition: width 0.6s;
+}
+
+.card__like-button:hover::before {
+  width: 100%;
+  background-color: var(--fill-like);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-like);
+}
+
+.card__like-button:hover .button__text {
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.card__like-button:focus {
+  box-shadow: 2px 2px 0 0 var(--border-color);
+  transition: box-shadow 0.3s;
+}
+
+.card-content .section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 25px 25px 25px 23px;
+}
+
+.card-content:nth-child(2) {
+  min-height: 821px;
+}
+
+.card-content h2 {
+  padding: 3.5px 10px 5.5px;
+}
+
+.card-content:nth-child(3) {
+  min-height: 737px;
+}
+
+.card-content:nth-child(4) {
+  min-height: 800px;
+}
+
+.card-content:nth-child(5) {
+  min-height: 830px;
+}
+
+.card-content:nth-child(6) {
+  min-height: 716px;
+}
+
+.card-content:nth-child(7) {
+  min-height: 779px;
+}
+
+.card-content:nth-child(8) {
+  min-height: 816px;
+}
+
+.filter-grayscale {
+  filter: grayscale(0.6);
+}
+
+.filter-saturate {
+  filter: saturate(175%);
+}
+
+.filter-saturate:nth-child(2) {
+  filter: saturate(160%);
+}
+
+.filter-sepia {
+  filter: sepia(80%);
+}
+
+.filter-invert {
+  filter: invert(0.7);
+}
+
+.filter-brightness {
+  filter: brightness(200%) saturate(60%);
+}
+
+.filter-brightness:nth-child(2) {
+  filter: brightness(150%);
+}
+
+.save {
+  display: flex;
+  justify-content: center;
+}
+
+.save-button {
+  padding: 51px 20.5px 15px 19.5px;
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: var(--weight-main-font-size);
+  line-height: 12.6px;
+  border: 2px solid var(--border-color);
+  position: relative;
+  color: var(--main-color);
+  background-color: var(--background-color);
+  position: relative;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.save-button:hover {
+  color: var(--color-like);
+}
+
+.save-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: white;
+  background-color: black;
+  transition: width 0.6s;
+}
+
+.save-button:hover::before {
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-like);
+}
+
+.save-button:hover .button__text {
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.save-button:focus {
+  box-shadow: 2px 2px 0 0 var(--border-color);
+  transition: box-shadow 0.3s;
+}
+
+.button__floppy {
+  position: absolute;
+  top: 15px;
+  left: 138.5px;
+  color: var(--main-color);
+}
+
+.button__floppy:hover {
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.dialog-button__floppy {
+  color: var(--main-color);
+  position: absolute;
+  top: 42px;
+  left: 42px;
+}
+
+dialog {
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  width: 341px;
+  min-height: 195px;
+  text-align: center;
+  padding: 30px 42px;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+dialog h2 {
+  color: var(--main-color);
+  margin-bottom: 30px;
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: var(--weight-main-font-size);
+  line-height: 21px;
+  padding-left: 40px;
+  text-align: left;
+}
+
+dialog button {
+  padding: 12.5px 114.5px;
+  color: var(--main-color);
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: var(--weight-main-font-size);
+  line-height: 12.6px;
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
 }

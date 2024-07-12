@@ -1,1 +1,16 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --background-image: url(../images/background-light.png);
+    --background-color: white;
+    --main-color:  rgb(0 0 0);
+    --border-color:  rgb(0 0 0);
+    --main-font-family: Inter, sans-serif;
+    --accent-font-family: PressStart2P, sans-serif;
+    --weight-main-font-size: 400;
+    --weight-heading: 700;
+    --color-opacity: rgb(0 0 0 / 0.6 );
+    --contour-color: rgb(0, 0, 0);
+    --sparks-color: rgba(255, 0, 0, 1);
+    --fill-like: rgb(0, 0, 0);
+    --color-like: white;
+}
