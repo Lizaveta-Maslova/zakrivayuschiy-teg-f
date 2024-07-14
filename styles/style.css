@@ -17,54 +17,50 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   background-image: var(--background-image);
+  background-size: cover;
   background-attachment: fixed;
-  font-size: var(--accent-font-family);
+  font-variation-settings: var(--weight-main-font-size);
+  padding-top: 100px;
 }
 
 .content-section {
-  /* width: 375px; */
+  /* inline-size: 375px; */
   margin: auto;
   background-color: var(--background-color);
+  border: 2px solid var(--border-color);
 }
 
 .header {
-  padding: 100px 0;
-  min-height: 527px; /*либо 531*/
-  background-color: transparent;
-}
-
-.header div {
-  padding: 120px 14px 25px 14px;
-  text-transform: uppercase;
   font-family: var(--accent-font-family);
-  font-weight: var(--weight-main-font-size);
-  min-height: 328px; /*высота белого блока*/
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid var(--border-color);
-  justify-content: space-between;
-  background-color: var(--background-color);
+  text-transform: uppercase;
+  font-variation-settings: var(--weight-main-font-size);
+  padding: 120px 14px 25px;
+  display: grid;
+  justify-items: center;
+  margin-bottom: 100px;
   color: var(--main-color);
 }
 
-.header h1 {
-  font-size: 49px;
-  line-height: 49px;
+/* надпись html */
+.logo {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  margin-bottom: 20px;
 }
 
-.header p {
-  font-size: 14px;
+/* закрывающий тег */
+.header h1 {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin-bottom: 25px;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: center;
   position: relative;
 }
 
+/* меню в шапке */
 .theme-menu__button {
   font-family: var(--accent-font-family);
   font-size: 14px;
@@ -74,15 +70,15 @@
   background-color: transparent;
   border: none;
   text-transform: uppercase;
-  transition: opacity 0.3s ease;
-  /* appearance: none; */
+  cursor: pointer;
+  /* transition: opacity 0.3s ease; */
 }
 
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
   top: 0;
-  left: -10px;
+  left: -20px;
   pointer-events: none;
   animation: arrow 0.5s ease-in-out infinite alternate;
   transition: transform 0.3s ease;
@@ -100,7 +96,7 @@
 
 .theme-menu__button:focus::after {
   width: 100%;
-  background-color: rgb(0 0 0/0.6);
+  background-color: var(--background-color);
   transition: width 300ms, background-color 0.3s;
   font-family: var(--accent-font-family);
   font-size: 14px;
@@ -120,7 +116,7 @@
   width: 0%;
   height: 2px;
   margin-top: 1px;
-  background-color: rgb(0 0 0/0.6);
+  background-color: var(--color-opacity);
   transition: none;
 }
 
@@ -130,45 +126,42 @@
   pointer-events: none;
 }
 
-/* активный класс меню, сделать стрелочку с постоянной анимацией */
-.theme-menu__button-active {
-  color: var(-color-opacity);
-  display: list-item;
+.content__picture {
+  inline-size: 100%;
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
 }
 
-.card-content {
-  border: 2px solid var(--border-color);
-}
-
-.card-content h2 {
-  color: var(--main-color);
+/* заголовки карточек */
+.card-heading {
   font-family: var(--main-font-family);
   font-size: 18px;
   font-weight: var(--weight-heading);
   line-height: 21.78px;
-  text-align: left;
-  /* min-height: 31px; */
+  padding: 3.5px 10px 5.5px;
+  color: var(--main-color);
 }
 
-.card-content img {
-  width: 100%;
-}
-
-.card-content:nth-child(1) {
-  min-height: 758px;
-}
-
-.card-content:nth-child(1) h2 {
-  padding: 4px 10px 6px 10px;
-}
-
-.card-content {
+/* стилизуем p */
+.content__picture-caption {
   font-family: var(--main-font-family);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: var(--weight-main-font-size);
   line-height: 21px;
-  margin-bottom: 50px;
+  padding: 25px;
   color: var(--main-color);
+}
+
+/* p верхний между двумя абзацами */
+.section-text {
+  margin-bottom: 27px;
+}
+
+/* отступы между карточками */
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .card__like-button {
@@ -183,31 +176,45 @@
   background-color: transparent;
   position: relative;
   cursor: pointer;
-  transition: 0.6s;
+  margin: 0 25px 25px 0;
+  transition: box-shadow 0.3s;
+  overflow: hidden;
+  color: var(--main-color);
 }
 
-/* начало - кнопка сердца и like */
-.wrapper {
+.card__like-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--main-color);
+}
+
+/*кнопка сердца и like*/
+.button__card {
   display: flex;
   justify-content: end;
-  gap: 12px;
+  gap: 5px;
 }
 
-.like-icon {
-  width: 27px;
-  height: 24px;
-  align-self: center;
+/*кнопка, оборачивающая иконку сердца*/
+.card__icon-button {
+  border: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  align-self: start;
 }
 
-.button-like:focus {
-  border: none;
+.card__icon-button:focus {
+  outline: none;
 }
 
-.button-like:focus-visible {
-  border: 2px solid var(--border-color);
-  transition: border 0.3s ease;
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  transition: border-color 0.3s ease;
 }
 
+/* при наведении на лайк */
 .card__like-button:hover {
   color: var(--color-like);
 }
@@ -221,13 +228,14 @@
   width: 0%;
   height: 100%;
   color: var(--color-like);
-  background-color: var(--fill-like);
+  background-color: var(--main-color);
   transition: width 0.6s;
+  mix-blend-mode: difference;
 }
 
 .card__like-button:hover::before {
   width: 100%;
-  background-color: var(--fill-like);
+  background-color: var(--main-color);
   position: absolute;
   top: 0;
   left: 0;
@@ -237,50 +245,6 @@
 .card__like-button:hover .button__text {
   z-index: 1;
   mix-blend-mode: difference;
-}
-
-.card__like-button:focus {
-  box-shadow: 2px 2px 0 0 var(--border-color);
-  transition: box-shadow 0.3s;
-}
-
-.card-content .section-text {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  padding: 25px 25px 25px 23px;
-}
-
-.card-content:nth-child(2) {
-  min-height: 821px;
-}
-
-.card-content h2 {
-  padding: 3.5px 10px 5.5px;
-}
-
-.card-content:nth-child(3) {
-  min-height: 737px;
-}
-
-.card-content:nth-child(4) {
-  min-height: 800px;
-}
-
-.card-content:nth-child(5) {
-  min-height: 830px;
-}
-
-.card-content:nth-child(6) {
-  min-height: 716px;
-}
-
-.card-content:nth-child(7) {
-  min-height: 779px;
-}
-
-.card-content:nth-child(8) {
-  min-height: 816px;
 }
 
 .filter-grayscale {
@@ -314,6 +278,9 @@
 .save {
   display: flex;
   justify-content: center;
+  padding: 0 34.5px 100px;
+  margin-top: 52px;
+  margin-bottom: 100px;
 }
 
 .save-button {
@@ -343,18 +310,20 @@
   left: 0;
   width: 0%;
   height: 100%;
-  color: white;
-  background-color: black;
+  color: var(--background-color);
+  background-color: var(--main-color);
   transition: width 0.6s;
+  mix-blend-mode: difference;
 }
 
 .save-button:hover::before {
   width: 100%;
-  background-color: black;
+  background-color: var(--main-color);
   position: absolute;
   top: 0;
   left: 0;
   color: var(--color-like);
+  mix-blend-mode: difference;
 }
 
 .save-button:hover .button__text {
@@ -393,13 +362,14 @@ dialog {
   min-height: 195px;
   text-align: center;
   padding: 30px 42px;
+  margin: auto;
 }
 
 dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
 
-dialog h2 {
+.dialog-title {
   color: var(--main-color);
   margin-bottom: 30px;
   font-family: var(--accent-font-family);
@@ -419,4 +389,18 @@ dialog button {
   line-height: 12.6px;
   background-color: var(--background-color);
   border: 2px solid var(--border-color);
+}
+
+@media (min-width: 375px) {
+  .header {
+    padding: 136px 120.5px 25px;
+  }
+
+  .save {
+    padding: 50px 553px 103px 552px;
+  }
+
+  .content-section {
+    max-width: 696px;
+  }
 }

@@ -13,4 +13,6 @@
     --sparks-color: rgba(255, 0, 0, 1);
     --fill-like: rgb(0, 0, 0);
     --color-like: white;
+    --like-fill-color: rgba(255, 0, 0, 1);
+    --fill-button: rgb(0 0 0);
 }
