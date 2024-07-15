@@ -6,7 +6,33 @@
 */
 
 html.theme-light {
-    --background-image:  repeating-linear-gradient(
+  --background-image: repeating-linear-gradient(
+      to left,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  --background-color: white;
+  --main-color: rgb(0 0 0);
+  --border-color: rgb(0 0 0);
+  --weight-main-font-size: 400;
+  --weight-heading: 700;
+  --main-font-family: "Inter", sans-serif;
+  --accent-font-family: "PressStart2P", sans-serif;
+  --color-opacity: rgb(0 0 0 / 0.6);
+  --contour-color: rgb(0, 0, 0);
+  --fill-like: rgb(0, 0, 0);
+  --color-like: white;
+  --like-fill-color: rgba(255, 0, 0, 1);
+  --sparks-color: rgba(255, 0, 0, 1);
+  --fill-button: rgb(0 0 0);
+  --color-button-like: white;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-image: repeating-linear-gradient(
         to left,
         #d3d3d3 0 2px,
         transparent 2px 4px
@@ -14,48 +40,45 @@ html.theme-light {
       repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
       linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
     --background-color: white;
-    --main-color:  rgb(0 0 0);
-    --border-color:  rgb(0 0 0);
+    --main-color: rgb(0 0 0);
+    --border-color: rgb(0 0 0);
     --weight-main-font-size: 400;
     --weight-heading: 700;
-    --main-font-family: Inter, sans-serif;
-    --accent-font-family: PressStart2P, sans-serif;
-    --color-opacity: rgb(0 0 0 / 0.6 );
+    --main-font-family: "Inter", sans-serif;
+    --accent-font-family: "PressStart2P", sans-serif;
+    --color-opacity: rgb(0 0 0 / 0.6);
     --contour-color: rgb(0, 0, 0);
     --fill-like: rgb(0, 0, 0);
     --color-like: white;
     --like-fill-color: rgba(255, 0, 0, 1);
     --sparks-color: rgba(255, 0, 0, 1);
     --fill-button: rgb(0 0 0);
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-      --background-image:  repeating-linear-gradient(
-        to left,
-        #d3d3d3 0 2px,
-        transparent 2px 4px
-      ),
-      repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
-      linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
-      --background-color: white;
-      --main-color:  rgb(0 0 0);
-      --border-color:  rgb(0 0 0);
-      --weight-main-font-size: 400;
-      --weight-heading: 700;
-      --main-font-family: Inter, sans-serif;
-      --accent-font-family: PressStart2P, sans-serif;
-      --color-opacity: rgb(0 0 0 / 0.6 );
-      --contour-color: rgb(0, 0, 0);
-      --fill-like: rgb(0, 0, 0);
-      --color-like: white;
-      --like-fill-color: rgba(255, 0, 0, 1);
-      --sparks-color: rgba(255, 0, 0, 1);
-      --fill-button: rgb(0 0 0);
-    }
+  }
 }
 
 html.theme-dark {
+  --background-image: repeating-linear-gradient(
+      to left,
+      #000 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #007f0c, #004306);
+  --background-color: rgb(0, 0, 0);
+  --main-color: rgb(0, 204, 20);
+  --border-color: rgb(0, 204, 20);
+  --weight-main-font-size: 465;
+  --weight-heading: 785;
+  --color-opacity: rgb(0 204 20 / 0.6);
+  --contour-color: rgb(0, 204, 20);
+  --like-fill-color: rgb(0, 204, 20);
+  --color-like: rgb(0, 204, 20);
+  --fill-button: rgb(0, 204, 20);
+  --fill-like: rgb(0, 204, 20);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-image: repeating-linear-gradient(
         to left,
         #000 0 2px,
@@ -64,35 +87,15 @@ html.theme-dark {
       repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 4px),
       linear-gradient(to bottom, #007f0c, #004306);
     --background-color: rgb(0, 0, 0);
-    --main-color:  rgb(0, 204, 20);
+    --main-color: rgb(0, 204, 20);
     --border-color: rgb(0, 204, 20);
     --weight-main-font-size: 465;
     --weight-heading: 785;
-    --color-opacity: rgb(0 204 20 / 0.6 );
-    --contour-color:  rgb(0, 204, 20);
+    --color-opacity: rgb(0, 204, 20 / 0.6);
+    --contour-color: rgb(0, 204, 20);
     --like-fill-color: rgb(0, 204, 20);
-    --color-like:  rgb(0, 0, 0);
+    --color-like: rgb(0, 204, 20);
+    --fill-like: rgb(0, 204, 20);
     --fill-button: rgb(0, 204, 20);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-image: repeating-linear-gradient(
-            to left,
-            #000 0 2px,
-            transparent 2px 4px
-          ),
-          repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 4px),
-          linear-gradient(to bottom, #007f0c, #004306);
-        --background-color: rgb(0, 0, 0);
-        --main-color:  rgb(0, 204, 20);
-        --border-color: rgb(0, 204, 20);
-        --weight-main-font-size: 465;
-        --weight-heading: 785;
-        --color-opacity: rgb(0, 204, 20 / 0.6 );
-        --contour-color:  rgb(0, 204, 20);
-        --like-fill-color: rgb(0, 204, 20);
-        --color-like:  rgb(0, 0, 0);
-        --fill-button: rgb(0, 204, 20);
-    }
+  }
 }

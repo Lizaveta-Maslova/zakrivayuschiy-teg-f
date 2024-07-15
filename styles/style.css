@@ -1,6 +1,6 @@
 /* Здесь вы напишете основную часть стилей страницы.
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+/* Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
 ✦ like-icon — для svg-иконки анимированного сердца
@@ -9,10 +9,7 @@
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-
-*/
-
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта. */
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -24,7 +21,6 @@
 }
 
 .content-section {
-  /* inline-size: 375px; */
   margin: auto;
   background-color: var(--background-color);
   border: 2px solid var(--border-color);
@@ -34,7 +30,7 @@
   font-family: var(--accent-font-family);
   text-transform: uppercase;
   font-variation-settings: var(--weight-main-font-size);
-  padding: 120px 14px 25px;
+  padding: 120px 14px 21px;
   display: grid;
   justify-items: center;
   margin-bottom: 100px;
@@ -58,6 +54,11 @@
   flex-direction: column;
   gap: 10px;
   position: relative;
+  padding-left: 21px;
+}
+
+.theme-menu__item {
+  position: relative; /* стрелочка появляется у активного меню*/
 }
 
 /* меню в шапке */
@@ -96,13 +97,12 @@
 
 .theme-menu__button:focus::after {
   width: 100%;
-  background-color: var(--background-color);
-  transition: width 300ms, background-color 0.3s;
   font-family: var(--accent-font-family);
   font-size: 14px;
   font-weight: var(--weight-main-font-size);
   line-height: 14px;
   color: var(--main-color);
+  transition: color 0.3s;
 }
 
 .theme-menu__button:focus {
@@ -126,6 +126,25 @@
   pointer-events: none;
 }
 
+.content__figure {
+  position: relative;
+}
+
+/*подпись html на карточках*/
+.figcaption-text {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
+  font-size: 14px;
+  font-family: var(--accent-font-family);
+  color: var(--main-color);
+  text-shadow: 0 0 1px var(--border-color);
+  top: 25px;
+  right: 13px;
+  mix-blend-mode: hard-light;
+  text-transform: uppercase;
+}
+
 .content__picture {
   inline-size: 100%;
   border-top: 2px solid var(--border-color);
@@ -143,7 +162,7 @@
 }
 
 /* стилизуем p */
-.content__picture-caption {
+.card-text {
   font-family: var(--main-font-family);
   font-size: 20px;
   font-weight: var(--weight-main-font-size);
@@ -153,12 +172,12 @@
 }
 
 /* p верхний между двумя абзацами */
-.section-text {
+.section-text:first-child {
   margin-bottom: 27px;
 }
 
 /* отступы между карточками */
-.cards-list {
+.cards {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -179,7 +198,7 @@
   margin: 0 25px 25px 0;
   transition: box-shadow 0.3s;
   overflow: hidden;
-  color: var(--main-color);
+  max-width: 130px;
 }
 
 .card__like-button:focus {
@@ -219,31 +238,27 @@
   color: var(--color-like);
 }
 
+/* обратно */
 .card__like-button::before {
   content: "";
-  display: block;
   position: absolute;
+  inset: 0;
+  background: var(--fill-like);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  inline-size: 100%;
+  block-size: 100%;
   top: 0;
   left: 0;
-  width: 0%;
-  height: 100%;
-  color: var(--color-like);
-  background-color: var(--main-color);
-  transition: width 0.6s;
-  mix-blend-mode: difference;
 }
 
 .card__like-button:hover::before {
-  width: 100%;
-  background-color: var(--main-color);
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: var(--color-like);
+  transform: scaleX(1);
 }
 
-.card__like-button:hover .button__text {
-  z-index: 1;
+.button__text {
+  color: var(--color-like);
   mix-blend-mode: difference;
 }
 
@@ -275,60 +290,53 @@
   filter: brightness(150%);
 }
 
-.save {
+footer {
+  padding: 50px 0 100px 0;
   display: flex;
   justify-content: center;
-  padding: 0 34.5px 100px;
-  margin-top: 52px;
-  margin-bottom: 100px;
 }
 
 .save-button {
-  padding: 51px 20.5px 15px 19.5px;
   font-family: var(--accent-font-family);
   font-size: 14px;
   font-weight: var(--weight-main-font-size);
   line-height: 12.6px;
   border: 2px solid var(--border-color);
-  position: relative;
   color: var(--main-color);
-  background-color: var(--background-color);
-  position: relative;
   cursor: pointer;
+  position: relative;
+  width: 306px;
+  min-height: 82px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   transition: 0.6s;
-}
-
-.save-button:hover {
-  color: var(--color-like);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
 }
 
 .save-button::before {
   content: "";
-  display: block;
   position: absolute;
+  inset: 0;
+  background: var(--fill-like);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  inline-size: 100%;
+  block-size: 100%;
   top: 0;
   left: 0;
-  width: 0%;
-  height: 100%;
-  color: var(--background-color);
-  background-color: var(--main-color);
-  transition: width 0.6s;
-  mix-blend-mode: difference;
 }
 
 .save-button:hover::before {
-  width: 100%;
-  background-color: var(--main-color);
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: var(--color-like);
-  mix-blend-mode: difference;
+  transform: scaleX(1);
 }
 
-.save-button:hover .button__text {
-  z-index: 1;
-  mix-blend-mode: difference;
+.save-button:hover {
+  color: var(--color-like);
 }
 
 .save-button:focus {
@@ -337,35 +345,35 @@
 }
 
 .button__floppy {
-  position: absolute;
-  top: 15px;
-  left: 138.5px;
   color: var(--main-color);
-}
-
-.button__floppy:hover {
   mix-blend-mode: difference;
-  z-index: 1;
 }
 
 .dialog-button__floppy {
   color: var(--main-color);
-  position: absolute;
-  top: 42px;
-  left: 42px;
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  margin-bottom: 42px;
 }
 
-dialog {
+.modal-dialog {
   background-color: var(--background-color);
   border: 2px solid var(--border-color);
-  width: 341px;
-  min-height: 195px;
+  max-width: 359px;
   text-align: center;
-  padding: 30px 42px;
+  padding: 30px;
+  line-height: 1.5;
   margin: auto;
 }
 
-dialog::backdrop {
+.modal-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.modal-dialog ::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
 
@@ -376,12 +384,12 @@ dialog::backdrop {
   font-size: 14px;
   font-weight: var(--weight-main-font-size);
   line-height: 21px;
-  padding-left: 40px;
+  text-transform: uppercase;
   text-align: left;
 }
 
-dialog button {
-  padding: 12.5px 114.5px;
+.modal-button {
+  padding: 12.5px 132.5px;
   color: var(--main-color);
   font-family: var(--accent-font-family);
   font-size: 14px;
@@ -389,15 +397,12 @@ dialog button {
   line-height: 12.6px;
   background-color: var(--background-color);
   border: 2px solid var(--border-color);
+  text-transform: uppercase;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 696px) {
   .header {
     padding: 136px 120.5px 25px;
-  }
-
-  .save {
-    padding: 50px 553px 103px 552px;
   }
 
   .content-section {
