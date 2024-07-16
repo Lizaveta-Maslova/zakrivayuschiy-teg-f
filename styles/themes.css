@@ -28,6 +28,9 @@ html.theme-light {
   --sparks-color: rgba(255, 0, 0, 1);
   --fill-button: rgb(0 0 0);
   --color-button-like: white;
+  --font-weight-desktop: 465;
+  --text-stroke-color:  rgb(0 0 0);
+  --floppy-color: white;
 }
 
 @media (prefers-color-scheme: light) {
@@ -53,6 +56,9 @@ html.theme-light {
     --like-fill-color: rgba(255, 0, 0, 1);
     --sparks-color: rgba(255, 0, 0, 1);
     --fill-button: rgb(0 0 0);
+    --font-weight-desktop: 465;
+    --text-stroke-color: rgb(0 0 0);
+    --floppy-color: white;
   }
 }
 
@@ -75,6 +81,9 @@ html.theme-dark {
   --color-like: rgb(0, 204, 20);
   --fill-button: rgb(0, 204, 20);
   --fill-like: rgb(0, 204, 20);
+  --font-weight-desktop: 465;
+  --text-stroke-color: rgb(0, 204, 20);
+  --floppy-color: rgb(0, 204, 20);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -97,5 +106,8 @@ html.theme-dark {
     --color-like: rgb(0, 204, 20);
     --fill-like: rgb(0, 204, 20);
     --fill-button: rgb(0, 204, 20);
+    --font-weight-desktop: 465;
+    --text-stroke-color: rgb(0, 204, 20);
+    --floppy-color: rgb(0, 204, 20);
   }
 }

@@ -21,4 +21,7 @@
   --color-like: white;
   --like-fill-color: rgba(255, 0, 0, 1);
   --fill-button: rgb(0 0 0);
+  --font-weight-desktop: 465;
+  --text-stroke-color: rgb(0 0 0);
+  --floppy-color: white;
 }
