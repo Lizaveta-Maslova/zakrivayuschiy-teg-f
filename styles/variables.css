@@ -9,10 +9,10 @@
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
   --background-color: white;
   --main-color: rgb(0 0 0);
-  --border-color: rgb(0 0 0);
+  --border-color: rgba(255, 255, 255, 1);
   --main-font-family: "Inter", sans-serif;
+  --font-weight-mobile: 400;
   --accent-font-family: "PressStart2P", sans-serif;
-  --weight-main-font-size: 400;
   --weight-heading: 700;
   --color-opacity: rgb(0 0 0 / 0.6);
   --contour-color: rgb(0, 0, 0);
@@ -21,7 +21,7 @@
   --color-like: white;
   --like-fill-color: rgba(255, 0, 0, 1);
   --fill-button: rgb(0 0 0);
-  --font-weight-desktop: 465;
-  --text-stroke-color: rgb(0 0 0);
+  --font-weight-desktop: 400;
+  --text-stroke-color: rgba(255, 255, 255, 1);
   --floppy-color: white;
 }

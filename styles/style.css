@@ -130,15 +130,6 @@
   position: relative;
 }
 
-@supports (
-  (-webkit-text-stroke: 1px var(--text-stroke-color)) or
-    (text-stroke: 1px var(--text-stroke-color))
-) {
-  .figcaption-text {
-    -webkit-text-stroke: 1px var(--text-stroke-color);
-  }
-}
-
 /*подпись html на карточках*/
 .figcaption-text {
   position: absolute;
@@ -147,11 +138,20 @@
   font-size: 14px;
   font-family: var(--accent-font-family);
   color: var(--main-color);
-  text-shadow: 0 0 1px var(--border-color);
+  text-shadow: -1px 0 #000;
   top: 25px;
-  right: 13px;
+  right: 12px;
   mix-blend-mode: hard-light;
   text-transform: uppercase;
+}
+
+@supports (
+  (text-stroke: 1px var(--text-stroke-color)) or
+    (-webkit-text-stroke: 1px var(--text-stroke-color))
+) {
+  .figcaption-text {
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
 }
 
 .content__picture {
@@ -173,8 +173,8 @@
 /* стилизуем p */
 .card-text {
   font-family: var(--main-font-family);
-  font-size: 20px;
-  font-weight: var(--weight-main-font-size);
+  font-size: 18px;
+  font-weight: 400;
   line-height: 21px;
   padding: 25px;
   color: var(--main-color);
@@ -438,7 +438,9 @@
 
 @media (min-width: 700px) {
   .header {
-    padding: 136px 120.5px 23px;
+    padding: 136px 120.5px 25px;
+    margin-top: 102px;
+    margin-bottom: 102px;
   }
 
   .content-section {
@@ -464,5 +466,17 @@
     width: 336px;
     min-height: 51px;
     justify-content: center;
+  }
+
+  .figcaption-text {
+    right: 25px;
+  }
+
+  .theme-menu__list {
+    gap: 8px;
+  }
+
+  .card-text {
+    font-weight: var(--font-weight-desktop);
   }
 }

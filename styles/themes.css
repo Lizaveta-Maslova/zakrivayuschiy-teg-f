@@ -16,7 +16,7 @@ html.theme-light {
   --background-color: white;
   --main-color: rgb(0 0 0);
   --border-color: rgb(0 0 0);
-  --weight-main-font-size: 400;
+  --font-weight-mobile: 400;
   --weight-heading: 700;
   --main-font-family: "Inter", sans-serif;
   --accent-font-family: "PressStart2P", sans-serif;
@@ -28,8 +28,8 @@ html.theme-light {
   --sparks-color: rgba(255, 0, 0, 1);
   --fill-button: rgb(0 0 0);
   --color-button-like: white;
-  --font-weight-desktop: 465;
-  --text-stroke-color:  rgb(0 0 0);
+  --font-weight-desktop: 400;
+  --text-stroke-color: rgba(255, 255, 255, 1);
   --floppy-color: white;
 }
 
@@ -45,7 +45,7 @@ html.theme-light {
     --background-color: white;
     --main-color: rgb(0 0 0);
     --border-color: rgb(0 0 0);
-    --weight-main-font-size: 400;
+    --font-weight-mobile: 400;
     --weight-heading: 700;
     --main-font-family: "Inter", sans-serif;
     --accent-font-family: "PressStart2P", sans-serif;
@@ -56,8 +56,8 @@ html.theme-light {
     --like-fill-color: rgba(255, 0, 0, 1);
     --sparks-color: rgba(255, 0, 0, 1);
     --fill-button: rgb(0 0 0);
-    --font-weight-desktop: 465;
-    --text-stroke-color: rgb(0 0 0);
+    --font-weight-desktop: 400;
+    --text-stroke-color: rgba(255, 255, 255, 1);
     --floppy-color: white;
   }
 }
@@ -73,7 +73,7 @@ html.theme-dark {
   --background-color: rgb(0, 0, 0);
   --main-color: rgb(0, 204, 20);
   --border-color: rgb(0, 204, 20);
-  --weight-main-font-size: 465;
+  --font-weight-mobile: 465;
   --weight-heading: 785;
   --color-opacity: rgb(0 204 20 / 0.6);
   --contour-color: rgb(0, 204, 20);
@@ -98,7 +98,7 @@ html.theme-dark {
     --background-color: rgb(0, 0, 0);
     --main-color: rgb(0, 204, 20);
     --border-color: rgb(0, 204, 20);
-    --weight-main-font-size: 465;
+    --font-weight-mobile: 465;
     --weight-heading: 785;
     --color-opacity: rgb(0, 204, 20 / 0.6);
     --contour-color: rgb(0, 204, 20);
