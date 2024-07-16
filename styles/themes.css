@@ -84,6 +84,7 @@ html.theme-dark {
   --font-weight-desktop: 465;
   --text-stroke-color: rgb(0, 204, 20);
   --floppy-color: rgb(0, 204, 20);
+  --sparks-color: rgb(0, 204, 20);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -109,5 +110,6 @@ html.theme-dark {
     --font-weight-desktop: 465;
     --text-stroke-color: rgb(0, 204, 20);
     --floppy-color: rgb(0, 204, 20);
+    --sparks-color: rgb(0, 204, 20);
   }
 }
